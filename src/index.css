@@ -1,0 +1,91 @@
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f4f2fa;
+  background: #09090d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --page-background: #09090d;
+  --accent-purple: #a78bfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background: var(--page-background);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-background);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Inter', sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ff7a1a;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #ff7a1a;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #ff7a1a;
+  color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090d;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #09090d;
+  border-radius: 10px;
+  background: #ff7a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a1a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (max-width: 680px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
