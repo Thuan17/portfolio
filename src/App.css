@@ -1686,3 +1686,161 @@
 a.project-arrow:hover {
   transform: translate(3px, -3px);
 }
+
+
+
+/* SOCIAL LINKS */
+.social-section {
+  padding-top: 70px;
+}
+
+.social-heading {
+  margin-bottom: 42px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.social-card {
+  --social-color: #ff7a1a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 26px;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.012)
+  );
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -80px;
+  top: -90px;
+  border-radius: 50%;
+  background: var(--social-color);
+  opacity: 0.08;
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.social-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--social-color);
+  box-shadow: 0 12px 35px rgba(255, 122, 26, 0.1);
+}
+
+.social-card-top,
+.social-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.social-card-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--social-color);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+  box-shadow: 0 0 24px color-mix(
+    in srgb,
+    var(--social-color) 30%,
+    transparent
+  );
+}
+
+.social-card-arrow {
+  color: var(--social-color);
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-card-arrow {
+  transform: translate(3px, -3px);
+}
+
+.social-card-info {
+  flex: 1;
+  padding: 25px 0;
+}
+
+.social-card-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+.social-card-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8ee6a0;
+  box-shadow: 0 0 10px rgba(142, 230, 160, 0.5);
+}
+
+.social-card-info h3 {
+  margin: 12px 0 7px;
+  font-size: 23px;
+}
+
+.social-card-info p {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.social-card-footer {
+  padding-top: 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.social-card-footer span:last-child {
+  color: var(--social-color);
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  .social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    min-height: 220px;
+    padding: 22px;
+  }
+}
