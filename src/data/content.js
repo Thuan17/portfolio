@@ -47,8 +47,8 @@ const content = {
     contactText:
       "Mình luôn sẵn sàng trao đổi về dự án, công nghệ hoặc những cơ hội hợp tác thú vị.",
     emailButton: "Gửi email cho mình",
-    footer: "Được thiết kế và phát triển với",
-    footerEnd: "bởi Gia Thuận.",
+    footer: "Được thiết kế và phát triển với bởi",
+    footerEnd: " Gia Thuận.",
     educationLabel: 'HỌC VẤN',
     educationTitle: 'Nền tảng chuyên môn',
     education: {
@@ -98,8 +98,8 @@ const content = {
     contactText:
       "I'm always happy to talk about projects, technology, and exciting opportunities to collaborate.",
     emailButton: "Send me an email",
-    footer: "Designed and built with",
-    footerEnd: "by Gia Thuan.",
+    footer: "Designed and built with by",
+    footerEnd: " Gia Thuan.",
     educationLabel: 'EDUCATION',
     educationTitle: 'Academic Background',
     education: {

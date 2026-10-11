@@ -518,8 +518,8 @@ function App() {
             </span>
           </a>
           <p>
-            © 2025 Gia Thuan. {t.footer} <span>♥</span>{" "}
-            {t.footerEnd}
+            © 2025 Gia Thuan. {t.footer} <span>♥</span>{" "} bởi
+           <b class="text-white"> {t.footerEnd}</b>
           </p>
           <button
             className="back-top"
@@ -531,17 +531,17 @@ function App() {
         </div>
       </footer>
 
-     <button
-  type="button"
-  className="floating-contact fixed bottom-5 right-4 z-[9999] flex h-12 w-12 items-center justify-center gap-2 rounded-full sm:h-auto sm:w-auto sm:px-5 sm:py-3"
-  onClick={() => scrollTo("contact")}
-  aria-label={language === "vi" ? "Liên hệ với tôi" : "Contact me"}
->
-  <span className="floating-contact-icon">✉</span>
-  <span className="hidden sm:inline">
-    {language === "vi" ? "Liên hệ" : "Contact me"}
-  </span>
-</button>
+      <button
+        type="button"
+        className="floating-contact fixed bottom-5 right-4 z-[9999] flex h-12 w-12 items-center justify-center gap-2 rounded-full sm:h-auto sm:w-auto sm:px-5 sm:py-3"
+        onClick={() => scrollTo("contact")}
+        aria-label={language === "vi" ? "Liên hệ với tôi" : "Contact me"}
+      >
+        <span className="floating-contact-icon">✉</span>
+        <span className="hidden sm:inline">
+          {language === "vi" ? "Liên hệ" : "Contact me"}
+        </span>
+      </button>
     </div>
 
   );

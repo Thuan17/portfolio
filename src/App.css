@@ -64,7 +64,7 @@
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -181,7 +181,8 @@
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 42px;
-  padding-top: 10px;
+  margin-top:4%;
+  padding-top: 25px;
   padding-bottom: 115px;
 }
 
@@ -1393,7 +1394,8 @@
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 4px;
-    padding-top: 30px;
+    margin-top: 15%;
+  padding-top: 30px;
     padding-bottom: 140px;
   }
 
