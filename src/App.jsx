@@ -1,133 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Typewriter from './Typewriter'
 
-const content = {
-  vi: {
-    nav: ["Trang chủ", "Giới thiệu", "Kỹ năng", "Dự án", "Liên hệ"],
-    role: "FULL-STACK DEVELOPER",
-    greeting: "Xin chào, mình là",
-    name: "Gia Thuận",
-    intro:
-      "Mình xây dựng những trải nghiệm web hiện đại, từ giao diện trực quan đến hệ thống backend mạnh mẽ.",
-    primary: "Xem dự án",
-    secondary: "Liên hệ với mình",
-    available: "Sẵn sàng cho những cơ hội mới",
-    aboutLabel: "TÌM HIỂU VỀ MÌNH",
-    aboutTitle: "Biến ý tưởng thành",
-    aboutAccent: "sản phẩm thực tế.",
-    aboutText:
-      "Mình yêu thích phát triển web và giải quyết các vấn đề bằng công nghệ. Mục tiêu của mình là tạo ra những sản phẩm có giao diện đẹp, hoạt động ổn định và mang lại giá trị thực tế cho người dùng.",
-    aboutText2:
-      "Mình luôn học hỏi, thử nghiệm công nghệ mới và cải thiện chất lượng code qua từng dự án.",
-    experience: "Tư duy phát triển",
-    experienceDesc: "Từ thiết kế giao diện đến logic hệ thống",
-    skillLabel: "CÔNG NGHỆ SỬ DỤNG",
-    skillTitle: "Bộ công cụ của mình",
-    skillText: "Những công nghệ mình đang sử dụng và phát triển kỹ năng.",
-    projectLabel: "MỘT SỐ SẢN PHẨM",
-    projectTitle: "Dự án nổi bật",
-    projectText:
-      "Một vài ý tưởng và sản phẩm tiêu biểu trong hành trình phát triển của mình.",
-    projects: [
-      {
-        number: "01",
-        title: "Headphone E-commerce",
-        type: "E-commerce · Full-stack",
-        description:
-          "Website thương mại điện tử bán tai nghe, hỗ trợ quản lý sản phẩm, giỏ hàng, đơn hàng và cập nhật trạng thái theo thời gian thực.",
-        tags: ["ASP.NET Core", "SQL Server", "Bootstrap", "SignalR"],
-        icon: "🛒",
-        logo: "https://pada.com.vn/Uploads/images/logo-3.png",
-        demoUrl: "https://pada.com.vn/",
-      },
-    ],
-    contactLabel: "HÃY KẾT NỐI",
-    contactTitle: "Có ý tưởng nào muốn",
-    contactAccent: "cùng thực hiện?",
-    contactText:
-      "Mình luôn sẵn sàng trao đổi về dự án, công nghệ hoặc những cơ hội hợp tác thú vị.",
-    emailButton: "Gửi email cho mình",
-    footer: "Được thiết kế và phát triển với",
-    footerEnd: "bởi Gia Thuận.",
-    skills: [
-      { name: "HTML & CSS", level: "Nền tảng giao diện", icon: "◈" },
-      { name: "JavaScript", level: "Ngôn ngữ lập trình", icon: "JS" },
-      { name: "React", level: "Frontend framework", icon: "⚛" },
-      { name: "C# / ASP.NET", level: "Backend development", icon: "C#" },
-      { name: "SQL", level: "Database", icon: "◉" },
-      { name: "Git & GitHub", level: "Version control", icon: "⑂" },
-    ],
-  },
-  en: {
-    nav: ["Home", "About", "Skills", "Projects", "Contact"],
-    role: "FULL-STACK DEVELOPER",
-    greeting: "Hi, I'm",
-    name: "Gia Thuan",
-    intro:
-      "I build modern web experiences, from intuitive interfaces to reliable and powerful backend systems.",
-    primary: "Explore projects",
-    secondary: "Get in touch",
-    available: "Open to new opportunities",
-    aboutLabel: "A LITTLE ABOUT ME",
-    aboutTitle: "Turning ideas into",
-    aboutAccent: "real-world products.",
-    aboutText:
-      "I enjoy web development and solving problems with technology. My goal is to build products that look great, work reliably, and create real value for users.",
-    aboutText2:
-      "I keep learning, exploring new technologies, and improving my code quality with every project.",
-    experience: "Development mindset",
-    experienceDesc: "From interface design to system logic",
-    skillLabel: "MY TECH STACK",
-    skillTitle: "Tools I work with",
-    skillText: "Technologies I use and continue to grow with.",
-    projectLabel: "SELECTED WORK",
-    projectTitle: "Featured projects",
-    projectText:
-      "A selection of ideas and products from my development journey.",
-    projects: [
-      {
-        number: "01",
-        title: "Warranty Management",
-        type: "Web App · Full-stack",
-        description:
-          "A warranty intake and tracking system for organizing product information and service progress.",
-        tags: ["React", "ASP.NET Core", "SQL"],
-        icon: "▦",
-      },
-    ],
-    contactLabel: "LET'S CONNECT",
-    contactTitle: "Have an idea to",
-    contactAccent: "build together?",
-    contactText:
-      "I'm always happy to talk about projects, technology, and exciting opportunities to collaborate.",
-    emailButton: "Send me an email",
-    footer: "Designed and built with",
-    footerEnd: "by Gia Thuan.",
-    skills: [
-      { name: "HTML & CSS", level: "Web foundations", icon: "◈" },
-      { name: "JavaScript", level: "Programming language", icon: "JS" },
-      { name: "React", level: "Frontend framework", icon: "⚛" },
-      { name: "C# / ASP.NET", level: "Backend development", icon: "C#" },
-      { name: "SQL", level: "Database", icon: "◉" },
-      { name: "Git & GitHub", level: "Version control", icon: "⑂" },
-    ],
-  },
-};
 
-const socialLinks = [
-  {
-    id: "zalo",
-    name: "Zalo",
-    label: "CHAT WITH ME",
-    description: "Kết nối và trao đổi trực tiếp qua Zalo.",
-    url: "https://zalo.me/0329867771",
-    icon: "Z",
-    color: "#0068ff",
-    buttonText: "Nhắn tin Zalo",
-    status: "Available to chat",
-  },
-];
-const skillBars = [90, 84, 80, 76, 72, 78];
+import content from "./data/content";
+import socialLinks from "./data/socialLinks";
+import skills, { skillBars } from "./data/skills";
+
+
 
 function App() {
   const [language, setLanguage] = useState("vi");
@@ -141,8 +21,8 @@ function App() {
   useEffect(() => {
     const elements = document.querySelectorAll(
       ".section-label, .section-heading, .center-heading, " +
-        ".about-content, .about-note, .skill-card, .project-card, " +
-        ".contact-panel, .hero-copy, .hero-visual",
+      ".about-content, .about-note, .skill-card, .project-card, " +
+      ".contact-panel, .hero-copy, .hero-visual",
     );
 
     elements.forEach((element, index) => {
@@ -178,10 +58,7 @@ function App() {
         <nav className="navbar container" aria-label="Main navigation">
           <a className="brand" href="#home" onClick={() => scrollTo("home")}>
             <span className="brand-mark">
-              GT<span>.</span>
-            </span>
-            <span className="brand-name">
-              gia<span>thuan</span>
+              <img src="/LOGOGT_FINAL.png" alt="GiaThuanLogo" />
             </span>
           </a>
 
@@ -238,7 +115,9 @@ function App() {
               <span className="role-line" />
               {t.role}
             </div>
-            <p className="hero-description">{t.intro}</p>
+            <p className="hero-description">
+              <Typewriter texts={t.intros} />
+            </p>
 
             <div className="hero-buttons">
               <button
@@ -257,7 +136,7 @@ function App() {
 
             <div className="hero-socials">
               <a
-                href="https://github.com/"
+                href="https://github.com/Thuan17"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -286,7 +165,7 @@ function App() {
             <div className="orbit orbit-inner" />
             <div className="hero-orb">
               <div className="orb-core">
-                GT<span>.</span>
+                <img src="/LOGOGT_FINAL.png" />
               </div>
               <span className="orb-spark spark-one">✦</span>
               <span className="orb-spark spark-two">✧</span>
@@ -306,7 +185,7 @@ function App() {
                   name: <strong>'Gia Thuan'</strong>,
                 </p>
                 <p className="code-indent">
-                  focus: <strong>'Full-stack'</strong>,
+                  focus: <strong>'Back-End'</strong>,
                 </p>
                 <p className="code-indent">
                   build: <strong>'Ideas'</strong>
@@ -317,7 +196,7 @@ function App() {
             <div className="floating-card tech-card">
               <span className="tech-card-icon">⌘</span>
               <div>
-                <strong>Full-stack</strong>
+                <strong>Back-End</strong>
                 <small>Web Development</small>
               </div>
               <span className="tech-card-check">✓</span>
@@ -371,7 +250,7 @@ function App() {
               <p>{t.skillText}</p>
             </div>
             <div className="skills-grid">
-              {t.skills.map((skill, i) => (
+              {skills[language].map((skill, i) => (
                 <article
                   className="skill-card"
                   key={skill.name}
@@ -484,6 +363,67 @@ function App() {
           </div>
         </section>
 
+
+
+        <section className="section education-section" id="education">
+          <div className="container">
+            <div className="section-heading education-heading">
+              <span className="section-label">
+                <span /> {t.educationLabel}
+              </span>
+
+              <h2>
+                {t.educationTitle}
+                <span className="gradient-text">.</span>
+              </h2>
+            </div>
+
+            <div className="education-card">
+              <div className="education-timeline">
+                <div className="education-timeline-dot" />
+                <div className="education-timeline-line" />
+              </div>
+
+              <div className="education-icon" aria-hidden="true">
+                <span>ED</span>
+              </div>
+
+              <div className="education-content">
+                <div className="education-top">
+                  <span className="education-period">
+                    {t.education.period}
+                  </span>
+
+                  <span className="education-status">
+                    <span className="education-status-dot" />
+                    {language === 'vi' ? 'Đã hoàn thành' : 'Completed'}
+                  </span>
+                </div>
+
+                <h3>{t.education.school}</h3>
+
+                <p className="education-degree">
+                  {t.education.degree}
+                </p>
+
+                <p className="education-description">
+                  {t.education.description}
+                </p>
+
+                <div className="education-tags">
+                  <span>Information Technology</span>
+                  <span>Software Development</span>
+                  <span>Web Development</span>
+                </div>
+              </div>
+
+              <div className="education-card-number" aria-hidden="true">
+                01
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section contact-section" id="contact">
           <div className="container">
             <div className="contact-panel">
@@ -518,6 +458,7 @@ function App() {
             </div>
           </div>
         </section>
+
 
         <section className="section social-section" id="social">
           <div className="container">
@@ -573,14 +514,11 @@ function App() {
             onClick={() => scrollTo("home")}
           >
             <span className="brand-mark">
-              GT<span>.</span>
-            </span>
-            <span className="brand-name">
-              gia<span>thuan</span>
+              <img src="/LOGOGT_FINAL.png" alt="Gia Thuan Logo" />
             </span>
           </a>
           <p>
-            © {new Date().getFullYear()} Gia Thuan. {t.footer} <span>♥</span>{" "}
+            © 2025 Gia Thuan. {t.footer} <span>♥</span>{" "}
             {t.footerEnd}
           </p>
           <button
@@ -592,7 +530,20 @@ function App() {
           </button>
         </div>
       </footer>
+
+     <button
+  type="button"
+  className="floating-contact fixed bottom-5 right-4 z-[9999] flex h-12 w-12 items-center justify-center gap-2 rounded-full sm:h-auto sm:w-auto sm:px-5 sm:py-3"
+  onClick={() => scrollTo("contact")}
+  aria-label={language === "vi" ? "Liên hệ với tôi" : "Contact me"}
+>
+  <span className="floating-contact-icon">✉</span>
+  <span className="hidden sm:inline">
+    {language === "vi" ? "Liên hệ" : "Contact me"}
+  </span>
+</button>
     </div>
+
   );
 }
 

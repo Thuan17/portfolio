@@ -1,4 +1,4 @@
-
+@import "tailwindcss";
 :root {
   font-family: 'Inter', sans-serif;
   color: #f4f2fa;
@@ -84,6 +84,9 @@ a:focus-visible {
   min-height: 100vh;
 }
 
+.hero-section {
+
+}
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 70px;
